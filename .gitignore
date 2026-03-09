@@ -1,0 +1,31 @@
+# Environment files — never commit real secrets
+.env
+.env.local
+.env.production
+.env.staging
+.env.*.local
+
+# SQLite databases — local only
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Build artifacts
+.next/
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Prisma generated client (regenerate on deploy)
+# node_modules/.prisma

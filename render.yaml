@@ -22,7 +22,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: DOPAMINE_PORT
-        value: 10000
+        value: "10000"
       - key: DOPAMINE_DATABASE_URL
         fromDatabase:
           name: claw-dopamine-db
@@ -50,7 +50,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: PSYCHE_PORT
-        value: 10000
+        value: "10000"
       - key: PSYCHE_DATABASE_URL
         fromDatabase:
           name: claw-psyche-db

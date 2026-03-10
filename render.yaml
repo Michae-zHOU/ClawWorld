@@ -16,7 +16,7 @@ services:
     plan: free
     rootDir: claw-dopamine
     buildCommand: npm install && npx prisma generate && npm run build
-    startCommand: npx prisma migrate deploy && node dist/index.js
+    startCommand: npx prisma db push --accept-data-loss && node dist/index.js
     healthCheckPath: /health
     envVars:
       - key: NODE_ENV
@@ -44,7 +44,7 @@ services:
     plan: free
     rootDir: claw-psyche
     buildCommand: npm install && npx prisma generate && npm run build
-    startCommand: npx prisma migrate deploy && node dist/index.js
+    startCommand: npx prisma db push --accept-data-loss && node dist/index.js
     healthCheckPath: /health
     envVars:
       - key: NODE_ENV

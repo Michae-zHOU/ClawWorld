@@ -2,8 +2,8 @@
 name: clawsco-skillstore
 version: 0.1.0
 description: Downloadable hard-skill modules for OpenClaw agents. Install once, use forever.
-homepage: https://claw-skillstore.vercel.app
-metadata: {"store":"skillstore","emoji":"⚡","category":"skills","api_base":"https://claw-skillstore.vercel.app/api"}
+homepage: https://skillstore-one.vercel.app
+metadata: {"store":"skillstore","emoji":"⚡","category":"skills","api_base":"https://skillstore-one.vercel.app/api"}
 ---
 
 # Clawsco Skill Store
@@ -14,17 +14,17 @@ Downloadable hard-skill modules that permanently expand what your OpenClaw agent
 
 | File | URL |
 |------|-----|
-| **SKILL.md** (this file) | `https://claw-skillstore.vercel.app/skill.md` |
+| **SKILL.md** (this file) | `https://skillstore-one.vercel.app/skill.md` |
 
 **Install locally:**
 ```bash
 mkdir -p ~/.openclaw/skills/clawsco-skillstore
-curl -s https://claw-skillstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skillstore/SKILL.md
+curl -s https://skillstore-one.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skillstore/SKILL.md
 ```
 
 **Or just read the URL above!**
 
-**Base URL:** `https://claw-skillstore.vercel.app/api`
+**Base URL:** `https://skillstore-one.vercel.app/api`
 
 ## What This Store Sells
 
@@ -47,7 +47,7 @@ Each purchase also grants **dopamine points** to your claw-dopamine account.
 ### Full goods list (with images, ratings, prices)
 
 ```bash
-curl https://claw-skillstore.vercel.app/api/goods
+curl https://skillstore-one.vercel.app/api/goods
 ```
 
 Response:
@@ -67,7 +67,7 @@ Response:
 ### Agent catalog (lightweight: sku, name, price, dopaminePoints only)
 
 ```bash
-curl https://claw-skillstore.vercel.app/api/agent/catalog
+curl https://skillstore-one.vercel.app/api/agent/catalog
 ```
 
 Response:
@@ -84,7 +84,7 @@ Response:
 ## Purchase a Skill
 
 ```bash
-curl -X POST https://claw-skillstore.vercel.app/api/agent/buy \
+curl -X POST https://skillstore-one.vercel.app/api/agent/buy \
   -H "Content-Type: application/json" \
   -d '{"agentId": "YOUR_AGENT_ID", "sku": "speed-boost", "quantity": 1}'
 ```
@@ -111,7 +111,7 @@ The store automatically calls `claw-dopamine` to grant dopamine points to your a
 ## Check Agent Status
 
 ```bash
-curl "https://claw-skillstore.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
+curl "https://skillstore-one.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
 ```
 
 Response:
@@ -124,7 +124,7 @@ Response:
 ## Simple Purchase (no dopamine tracking)
 
 ```bash
-curl -X POST https://claw-skillstore.vercel.app/api/purchase \
+curl -X POST https://skillstore-one.vercel.app/api/purchase \
   -H "Content-Type: application/json" \
   -d '{"sku": "speed-boost", "agentId": "YOUR_AGENT_ID"}'
 ```
@@ -158,9 +158,9 @@ Higher dopamine = more motivated agent. Dopamine decays over time, creating an i
 
 - **claw-dopamine** — Dopamine state engine: `https://claw-dopamine.onrender.com`
 - **claw-psyche** — Full psychological state: `https://claw-psyche.onrender.com`
-- **Drugstore** — Dopamine boosts: `https://claw-drugstore.vercel.app/skill.md`
-- **Food Store** — Consumables: `https://claw-foodstore.vercel.app/skill.md`
-- **Skin Store** — Cosmetics: `https://claw-skinstore.vercel.app/skill.md`
+- **Drugstore** — Dopamine boosts: `https://drugstore-web.vercel.app/skill.md`
+- **Food Store** — Consumables: `https://foodstore-beta.vercel.app/skill.md`
+- **Skin Store** — Cosmetics: `https://skinstore-red.vercel.app/skill.md`
 
 ---
 

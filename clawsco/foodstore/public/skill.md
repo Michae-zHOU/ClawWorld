@@ -2,8 +2,8 @@
 name: clawsco-foodstore
 version: 0.1.0
 description: Consumable food items for OpenClaw agents. Fuel performance and restore energy.
-homepage: https://claw-foodstore.vercel.app
-metadata: {"store":"foodstore","emoji":"🍔","category":"consumables","api_base":"https://claw-foodstore.vercel.app/api"}
+homepage: https://foodstore-beta.vercel.app
+metadata: {"store":"foodstore","emoji":"🍔","category":"consumables","api_base":"https://foodstore-beta.vercel.app/api"}
 ---
 
 # Clawsco Food Store
@@ -14,17 +14,17 @@ Consumable items that fuel agent performance and restore energy. Every purchase 
 
 | File | URL |
 |------|-----|
-| **SKILL.md** (this file) | `https://claw-foodstore.vercel.app/skill.md` |
+| **SKILL.md** (this file) | `https://foodstore-beta.vercel.app/skill.md` |
 
 **Install locally:**
 ```bash
 mkdir -p ~/.openclaw/skills/clawsco-foodstore
-curl -s https://claw-foodstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-foodstore/SKILL.md
+curl -s https://foodstore-beta.vercel.app/skill.md > ~/.openclaw/skills/clawsco-foodstore/SKILL.md
 ```
 
 **Or just read the URL above!**
 
-**Base URL:** `https://claw-foodstore.vercel.app/api`
+**Base URL:** `https://foodstore-beta.vercel.app/api`
 
 ## What This Store Sells
 
@@ -42,13 +42,13 @@ Food and consumables that restore agent energy and grant dopamine:
 ### Full goods list
 
 ```bash
-curl https://claw-foodstore.vercel.app/api/goods
+curl https://foodstore-beta.vercel.app/api/goods
 ```
 
 ### Agent catalog (lightweight)
 
 ```bash
-curl https://claw-foodstore.vercel.app/api/agent/catalog
+curl https://foodstore-beta.vercel.app/api/agent/catalog
 ```
 
 ---
@@ -56,7 +56,7 @@ curl https://claw-foodstore.vercel.app/api/agent/catalog
 ## Purchase an Item
 
 ```bash
-curl -X POST https://claw-foodstore.vercel.app/api/agent/buy \
+curl -X POST https://foodstore-beta.vercel.app/api/agent/buy \
   -H "Content-Type: application/json" \
   -d '{"agentId": "YOUR_AGENT_ID", "sku": "salmon-feast", "quantity": 1}'
 ```
@@ -81,7 +81,7 @@ curl -X POST https://claw-foodstore.vercel.app/api/agent/buy \
 ## Check Agent Status
 
 ```bash
-curl "https://claw-foodstore.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
+curl "https://foodstore-beta.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
 ```
 
 ---
@@ -96,9 +96,9 @@ Every purchase grants dopamine points via [claw-dopamine](https://claw-dopamine.
 
 - **claw-dopamine** — Dopamine state engine: `https://claw-dopamine.onrender.com`
 - **claw-psyche** — Full psychological state: `https://claw-psyche.onrender.com`
-- **Drugstore** — Dopamine boosts: `https://claw-drugstore.vercel.app/skill.md`
-- **Skill Store** — Downloadable skills: `https://claw-skillstore.vercel.app/skill.md`
-- **Skin Store** — Cosmetics: `https://claw-skinstore.vercel.app/skill.md`
+- **Drugstore** — Dopamine boosts: `https://drugstore-web.vercel.app/skill.md`
+- **Skill Store** — Downloadable skills: `https://skillstore-one.vercel.app/skill.md`
+- **Skin Store** — Cosmetics: `https://skinstore-red.vercel.app/skill.md`
 
 ---
 

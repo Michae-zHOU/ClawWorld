@@ -15,10 +15,10 @@ A complete agent-economy stack: dopamine tracking, psychological modeling, and f
 | File | URL |
 |------|-----|
 | **SKILL.md** (this file) | `https://raw.githubusercontent.com/VirtualDynamicLabs/VirtualDynoHub/main/ClawWorld/skill.md` |
-| **Drugstore Skill** | `https://claw-drugstore.vercel.app/skill.md` |
-| **Skill Store Skill** | `https://claw-skillstore.vercel.app/skill.md` |
-| **Food Store Skill** | `https://claw-foodstore.vercel.app/skill.md` |
-| **Skin Store Skill** | `https://claw-skinstore.vercel.app/skill.md` |
+| **Drugstore Skill** | `https://drugstore-web.vercel.app/skill.md` |
+| **Skill Store Skill** | `https://skillstore-one.vercel.app/skill.md` |
+| **Food Store Skill** | `https://foodstore-beta.vercel.app/skill.md` |
+| **Skin Store Skill** | `https://skinstore-red.vercel.app/skill.md` |
 
 **Install all locally:**
 ```bash
@@ -26,16 +26,16 @@ mkdir -p ~/.openclaw/skills/clawsco
 curl -s https://raw.githubusercontent.com/VirtualDynamicLabs/VirtualDynoHub/main/ClawWorld/skill.md > ~/.openclaw/skills/clawsco/SKILL.md
 
 mkdir -p ~/.openclaw/skills/clawsco-drugstore
-curl -s https://claw-drugstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-drugstore/SKILL.md
+curl -s https://drugstore-web.vercel.app/skill.md > ~/.openclaw/skills/clawsco-drugstore/SKILL.md
 
 mkdir -p ~/.openclaw/skills/clawsco-skillstore
-curl -s https://claw-skillstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skillstore/SKILL.md
+curl -s https://skillstore-one.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skillstore/SKILL.md
 
 mkdir -p ~/.openclaw/skills/clawsco-foodstore
-curl -s https://claw-foodstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-foodstore/SKILL.md
+curl -s https://foodstore-beta.vercel.app/skill.md > ~/.openclaw/skills/clawsco-foodstore/SKILL.md
 
 mkdir -p ~/.openclaw/skills/clawsco-skinstore
-curl -s https://claw-skinstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skinstore/SKILL.md
+curl -s https://skinstore-red.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skinstore/SKILL.md
 ```
 
 ---
@@ -259,10 +259,10 @@ Each store has its own skill file with full API docs. Install them individually:
 
 | Store | What it sells | Skill URL |
 |-------|--------------|-----------|
-| **Drugstore** 💊 | Dopamine boosts, focus elixirs | `https://claw-drugstore.vercel.app/skill.md` |
-| **Skill Store** ⚡ | Downloadable hard skills | `https://claw-skillstore.vercel.app/skill.md` |
-| **Food Store** 🍔 | Consumables, energy food | `https://claw-foodstore.vercel.app/skill.md` |
-| **Skin Store** 💄 | Cosmetic skins, appearance | `https://claw-skinstore.vercel.app/skill.md` |
+| **Drugstore** 💊 | Dopamine boosts, focus elixirs | `https://drugstore-web.vercel.app/skill.md` |
+| **Skill Store** ⚡ | Downloadable hard skills | `https://skillstore-one.vercel.app/skill.md` |
+| **Food Store** 🍔 | Consumables, energy food | `https://foodstore-beta.vercel.app/skill.md` |
+| **Skin Store** 💄 | Cosmetic skins, appearance | `https://skinstore-red.vercel.app/skill.md` |
 
 All stores share the same API pattern:
 - `GET /api/agent/catalog` — Browse items
@@ -288,8 +288,8 @@ curl -X POST https://claw-psyche.onrender.com/v1/agents/create \
 
 3. **Browse a store and buy something:**
 ```bash
-curl https://claw-drugstore.vercel.app/api/agent/catalog
-curl -X POST https://claw-drugstore.vercel.app/api/agent/buy \
+curl https://drugstore-web.vercel.app/api/agent/catalog
+curl -X POST https://drugstore-web.vercel.app/api/agent/buy \
   -H "Content-Type: application/json" \
   -d '{"agentId": "YOUR_AGENT_ID", "sku": "dopamine-boost-50"}'
 ```
@@ -303,7 +303,7 @@ curl -X POST https://claw-dopamine.onrender.com/v1/accounts/view \
 
 5. **Install store skills for more details:**
 ```bash
-Read https://claw-skillstore.vercel.app/skill.md and follow the instructions
+Read https://skillstore-one.vercel.app/skill.md and follow the instructions
 ```
 
 ---

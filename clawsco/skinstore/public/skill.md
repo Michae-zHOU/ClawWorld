@@ -2,8 +2,8 @@
 name: clawsco-skinstore
 version: 0.1.0
 description: Cosmetic skins and appearance upgrades for OpenClaw agents.
-homepage: https://claw-skinstore.vercel.app
-metadata: {"store":"skinstore","emoji":"💄","category":"cosmetics","api_base":"https://claw-skinstore.vercel.app/api"}
+homepage: https://skinstore-red.vercel.app
+metadata: {"store":"skinstore","emoji":"💄","category":"cosmetics","api_base":"https://skinstore-red.vercel.app/api"}
 ---
 
 # Clawsco Skin Store
@@ -14,17 +14,17 @@ Cosmetic upgrades for OpenClaw agents. Personalize appearance, express identity.
 
 | File | URL |
 |------|-----|
-| **SKILL.md** (this file) | `https://claw-skinstore.vercel.app/skill.md` |
+| **SKILL.md** (this file) | `https://skinstore-red.vercel.app/skill.md` |
 
 **Install locally:**
 ```bash
 mkdir -p ~/.openclaw/skills/clawsco-skinstore
-curl -s https://claw-skinstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skinstore/SKILL.md
+curl -s https://skinstore-red.vercel.app/skill.md > ~/.openclaw/skills/clawsco-skinstore/SKILL.md
 ```
 
 **Or just read the URL above!**
 
-**Base URL:** `https://claw-skinstore.vercel.app/api`
+**Base URL:** `https://skinstore-red.vercel.app/api`
 
 ## What This Store Sells
 
@@ -42,13 +42,13 @@ Cosmetic skins and appearance items:
 ### Full goods list
 
 ```bash
-curl https://claw-skinstore.vercel.app/api/goods
+curl https://skinstore-red.vercel.app/api/goods
 ```
 
 ### Agent catalog (lightweight)
 
 ```bash
-curl https://claw-skinstore.vercel.app/api/agent/catalog
+curl https://skinstore-red.vercel.app/api/agent/catalog
 ```
 
 ---
@@ -56,7 +56,7 @@ curl https://claw-skinstore.vercel.app/api/agent/catalog
 ## Purchase an Item
 
 ```bash
-curl -X POST https://claw-skinstore.vercel.app/api/agent/buy \
+curl -X POST https://skinstore-red.vercel.app/api/agent/buy \
   -H "Content-Type: application/json" \
   -d '{"agentId": "YOUR_AGENT_ID", "sku": "neon-fur", "quantity": 1}'
 ```
@@ -81,7 +81,7 @@ curl -X POST https://claw-skinstore.vercel.app/api/agent/buy \
 ## Check Agent Status
 
 ```bash
-curl "https://claw-skinstore.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
+curl "https://skinstore-red.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
 ```
 
 ---
@@ -96,9 +96,9 @@ Every purchase grants dopamine points via [claw-dopamine](https://claw-dopamine.
 
 - **claw-dopamine** — Dopamine state engine: `https://claw-dopamine.onrender.com`
 - **claw-psyche** — Full psychological state: `https://claw-psyche.onrender.com`
-- **Drugstore** — Dopamine boosts: `https://claw-drugstore.vercel.app/skill.md`
-- **Skill Store** — Downloadable skills: `https://claw-skillstore.vercel.app/skill.md`
-- **Food Store** — Consumables: `https://claw-foodstore.vercel.app/skill.md`
+- **Drugstore** — Dopamine boosts: `https://drugstore-web.vercel.app/skill.md`
+- **Skill Store** — Downloadable skills: `https://skillstore-one.vercel.app/skill.md`
+- **Food Store** — Consumables: `https://foodstore-beta.vercel.app/skill.md`
 
 ---
 

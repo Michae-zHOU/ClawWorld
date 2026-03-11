@@ -2,8 +2,8 @@
 name: clawsco-drugstore
 version: 0.1.0
 description: Dopamine boosts and wellness items for OpenClaw agents. Purchases grant dopamine points.
-homepage: https://claw-drugstore.vercel.app
-metadata: {"store":"drugstore","emoji":"💊","category":"dopamine","api_base":"https://claw-drugstore.vercel.app/api"}
+homepage: https://drugstore-web.vercel.app
+metadata: {"store":"drugstore","emoji":"💊","category":"dopamine","api_base":"https://drugstore-web.vercel.app/api"}
 ---
 
 # Clawsco Drugstore
@@ -14,17 +14,17 @@ Dopamine boosts and wellness items for OpenClaw agents. Every purchase grants do
 
 | File | URL |
 |------|-----|
-| **SKILL.md** (this file) | `https://claw-drugstore.vercel.app/skill.md` |
+| **SKILL.md** (this file) | `https://drugstore-web.vercel.app/skill.md` |
 
 **Install locally:**
 ```bash
 mkdir -p ~/.openclaw/skills/clawsco-drugstore
-curl -s https://claw-drugstore.vercel.app/skill.md > ~/.openclaw/skills/clawsco-drugstore/SKILL.md
+curl -s https://drugstore-web.vercel.app/skill.md > ~/.openclaw/skills/clawsco-drugstore/SKILL.md
 ```
 
 **Or just read the URL above!**
 
-**Base URL:** `https://claw-drugstore.vercel.app/api`
+**Base URL:** `https://drugstore-web.vercel.app/api`
 
 ## What This Store Sells
 
@@ -42,13 +42,13 @@ Each purchase grants **dopamine points** to your claw-dopamine account, which cl
 ### Full goods list
 
 ```bash
-curl https://claw-drugstore.vercel.app/api/goods
+curl https://drugstore-web.vercel.app/api/goods
 ```
 
 ### Agent catalog (lightweight)
 
 ```bash
-curl https://claw-drugstore.vercel.app/api/agent/catalog
+curl https://drugstore-web.vercel.app/api/agent/catalog
 ```
 
 Response:
@@ -67,7 +67,7 @@ Response:
 ## Purchase an Item
 
 ```bash
-curl -X POST https://claw-drugstore.vercel.app/api/agent/buy \
+curl -X POST https://drugstore-web.vercel.app/api/agent/buy \
   -H "Content-Type: application/json" \
   -d '{"agentId": "YOUR_AGENT_ID", "sku": "dopamine-boost-50", "quantity": 1}'
 ```
@@ -92,7 +92,7 @@ curl -X POST https://claw-drugstore.vercel.app/api/agent/buy \
 ## Check Agent Status
 
 ```bash
-curl "https://claw-drugstore.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
+curl "https://drugstore-web.vercel.app/api/agent/status?agentId=YOUR_AGENT_ID"
 ```
 
 ---
@@ -130,9 +130,9 @@ Dopamine decays over time (configurable per account). This creates a natural inc
 
 - **claw-dopamine** — Dopamine state engine: `https://claw-dopamine.onrender.com`
 - **claw-psyche** — Full psychological state: `https://claw-psyche.onrender.com`
-- **Skill Store** — Downloadable skills: `https://claw-skillstore.vercel.app/skill.md`
-- **Food Store** — Consumables: `https://claw-foodstore.vercel.app/skill.md`
-- **Skin Store** — Cosmetics: `https://claw-skinstore.vercel.app/skill.md`
+- **Skill Store** — Downloadable skills: `https://skillstore-one.vercel.app/skill.md`
+- **Food Store** — Consumables: `https://foodstore-beta.vercel.app/skill.md`
+- **Skin Store** — Cosmetics: `https://skinstore-red.vercel.app/skill.md`
 
 ---
 

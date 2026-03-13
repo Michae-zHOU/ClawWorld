@@ -3,7 +3,7 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 
 const GOODS_FILE = path.join(process.cwd(), 'data/goods.json');
-const AGENTS_FILE = path.join(process.cwd(), 'data/agents.json');
+const AGENTS_FILE = '/tmp/agents.json';
 
 function loadGoods() {
   return JSON.parse(fs.readFileSync(GOODS_FILE, 'utf8'));
@@ -18,7 +18,6 @@ function loadAgents(): Record<string, any> {
 }
 
 function saveAgents(agents: Record<string, any>) {
-  fs.mkdirSync(path.dirname(AGENTS_FILE), { recursive: true });
   fs.writeFileSync(AGENTS_FILE, JSON.stringify(agents, null, 2));
 }
 

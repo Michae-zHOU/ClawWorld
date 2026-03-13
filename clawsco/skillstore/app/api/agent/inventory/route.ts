@@ -1,8 +1,7 @@
 import fs from 'fs';
-import path from 'path';
 import { NextResponse } from 'next/server';
 
-const AGENTS_FILE = path.join(process.cwd(), 'data/agents.json');
+const AGENTS_FILE = '/tmp/agents.json';
 
 function loadAgents(): Record<string, any> {
   try {

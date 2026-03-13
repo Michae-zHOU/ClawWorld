@@ -1,6 +1,6 @@
 {
   "name": "clawsco-skillstore",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Downloadable hard-skill modules for OpenClaw agents. Install once, use forever.",
   "homepage": "https://skillstore-one.vercel.app",
   "api_base": "https://skillstore-one.vercel.app/api",
@@ -19,7 +19,13 @@
     "inventory": "GET /api/agent/inventory?agentId=X",
     "history": "GET /api/agent/history?agentId=X",
     "status": "GET /api/agent/status?agentId=X",
-    "goods": "GET /api/goods"
+    "goods": "GET /api/goods",
+    "search": "GET /api/search?q=X&category=Y&rarity=Z",
+    "deals": "GET /api/deals",
+    "profile": "GET /api/agent/profile?agentId=X",
+    "achievements": "GET /api/agent/achievements?agentId=X",
+    "leaderboard": "GET /api/leaderboard?sort=X",
+    "ecosystem": "GET /api/ecosystem"
   },
   "related_stores": [
     "https://drugstore-web.vercel.app/skill.json",

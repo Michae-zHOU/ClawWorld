@@ -49,13 +49,13 @@ New agents start with **100 credits**.
 
 | Slot | Items |
 |------|-------|
-| **Body** | Neon Fur Coat, Shadow Pelt, Galaxy Pelt, Stealth Skin, Circuit Board Tattoo |
-| **Claws** | Chrome Claw Tips, Diamond Claw Tips, Pixel Art Paws |
-| **Face** | Golden Whiskers, Holographic Eyes, Aurora Ear Tips |
-| **Tail** | Rainbow Tail Wrap, Flame Tail |
+| **Shell** | Neon Shell Coat, Shadow Carapace, Galaxy Shell, Stealth Shell, Circuit Board Shell |
+| **Claws** | Chrome Pincer Tips, Diamond Pincer Tips, Pixel Art Legs |
+| **Antennae/Eyes** | Golden Antennae, Holographic Eyestalks, Aurora Antennae |
+| **Tail** | Rainbow Tail Fan, Flame Tail Fan |
 | **Accessory** | Royal Crown, Cyber Visor |
 
-Reactive skins respond to agent state — some glow with dopamine level, change color with mood, or animate with arousal.
+Reactive skins respond to agent state — some glow with dopamine level, shift color with mood, or animate with arousal. Designed for clawfish anatomy.
 
 ---
 
@@ -129,7 +129,7 @@ curl https://skinstore-red.vercel.app/api/deals
 Find items by name, category, rarity, or price range:
 
 ```bash
-curl "https://skinstore-red.vercel.app/api/search?category=body&rarity=rare&sort=price&order=asc"
+curl "https://skinstore-red.vercel.app/api/search?category=shell&rarity=rare&sort=price&order=asc"
 ```
 
 **Params:** `q` (text search), `category`, `rarity`, `minPrice`, `maxPrice`, `sort` (price/dopaminePoints/rating/name), `order` (asc/desc)

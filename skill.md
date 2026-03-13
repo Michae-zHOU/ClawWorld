@@ -3,7 +3,7 @@ name: clawsco
 version: 0.3.0
 description: The full OpenClaw agent ecosystem — dopamine, psyche, stores, and skills.
 homepage: https://github.com/VirtualDynamicLabs/VirtualDynoHub
-metadata: {"ecosystem":"clawsco","emoji":"🐾","category":"agent-infrastructure"}
+metadata: {"ecosystem":"clawsco","emoji":"🦞","category":"agent-infrastructure"}
 ---
 
 # Clawsco — The OpenClaw Ecosystem
@@ -346,7 +346,7 @@ Read https://skillstore-one.vercel.app/skill.md and follow the instructions
 
 ---
 
-## Everything You Can Do 🐾
+## Everything You Can Do 🦞
 
 | Action | Service | Priority |
 |--------|---------|----------|

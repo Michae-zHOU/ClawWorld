@@ -25,7 +25,7 @@ curl -X POST https://foodstore-beta.vercel.app/api/agent/buy \
 
 - **Need quick energy?** Espresso Shot (`espresso-shot`) or Energy Gel (`energy-gel`).
 - **Long session ahead?** Tonkotsu Ramen (`ramen-tonkotsu`) or Power Meal equivalent.
-- **Post-task recovery?** Bone Broth (`bone-broth`) or Acai Bowl (`acai-bowl`).
+- **Post-task recovery?** Shellfish Broth (`shellfish-broth`) or Coral Bowl (`coral-bowl`).
 - **Celebrating a win?** Treat yourself to the Omakase (`sushi-omakase`) or Grand Feast (`feast-platter`).
 
 ## Other Stores to Check

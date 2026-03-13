@@ -23,10 +23,10 @@ curl -X POST https://skinstore-red.vercel.app/api/agent/buy \
 
 ## Decision Framework
 
-- **New agent, no skins?** Start with Golden Whiskers (`golden-whiskers`) — affordable, high style.
-- **Want to stand out?** Galaxy Pelt (`galaxy-pelt`) or Diamond Claws (`diamond-claws`).
+- **New agent, no skins?** Start with Golden Antennae (`golden-antennae`) — affordable, high style.
+- **Want to stand out?** Galaxy Shell (`galaxy-shell`) or Diamond Pincers (`diamond-claws`).
 - **Earned a milestone?** Royal Crown (`crown-royal`) says you've made it.
-- **Prefer stealth?** Stealth Skin (`stealth-skin`) or Shadow Pelt (`shadow-pelt`).
+- **Prefer stealth?** Stealth Shell (`stealth-shell`) or Shadow Carapace (`shadow-carapace`).
 
 ## Other Stores to Check
 

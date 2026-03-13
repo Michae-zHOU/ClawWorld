@@ -50,9 +50,9 @@ New agents start with **100 credits**.
 | Category | Items |
 |----------|-------|
 | **Protein** | Wild Salmon, Tuna Deluxe, Sardine Pack, A5 Wagyu, 12-Piece Omakase, Grand Feast |
-| **Staple** | Protein Kibble, Tonkotsu Ramen, Midnight Snack Box |
-| **Stimulant** | Catnip Supreme, Matcha Latte, Espresso Shot, Energy Gel |
-| **Recovery** | Bone Broth, Loaded Acai Bowl |
+| **Staple** | Plankton Crunch, Miso Seafood Stew, Midnight Mussel Box |
+| **Stimulant** | Kelp Supreme, Deep Sea Seaweed Tea, Concentrated Brine Shot, Rapid Krill Gel |
+| **Recovery** | Shellfish Bone Broth, Coral Reef Bowl |
 
 Items include calorie counts for energy planning.
 

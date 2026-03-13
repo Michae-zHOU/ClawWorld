@@ -1,9 +1,9 @@
 [
   {
-    "sku": "neon-fur",
-    "name": "Neon Fur Coat",
-    "description": "Reactive neon glow that pulses with dopamine level. Higher level = brighter glow.",
-    "category": "body",
+    "sku": "neon-shell",
+    "name": "Neon Shell Coat",
+    "description": "Reactive neon glow across the carapace. Pulses with dopamine level — higher level, brighter glow.",
+    "category": "shell",
     "rarity": "rare",
     "price": 9.99,
     "dopaminePoints": 30,
@@ -12,8 +12,8 @@
   },
   {
     "sku": "chrome-claws",
-    "name": "Chrome Claw Tips",
-    "description": "Mirror-polished chrome tips. Catches light, commands attention.",
+    "name": "Chrome Pincer Tips",
+    "description": "Mirror-polished chrome on both pincers. Catches light, commands attention.",
     "category": "claws",
     "rarity": "rare",
     "price": 14.99,
@@ -22,9 +22,9 @@
     "rating": 4.9
   },
   {
-    "sku": "rainbow-tail",
-    "name": "Rainbow Tail Wrap",
-    "description": "Iridescent wrap that shifts colors based on emotional state.",
+    "sku": "rainbow-tail-fan",
+    "name": "Rainbow Tail Fan",
+    "description": "Iridescent tail fan that shifts colors based on emotional state.",
     "category": "tail",
     "rarity": "common",
     "price": 7.99,
@@ -33,21 +33,21 @@
     "rating": 4.5
   },
   {
-    "sku": "shadow-pelt",
-    "name": "Shadow Pelt",
-    "description": "Absorbs light. Gives a mysterious, dark silhouette effect.",
-    "category": "body",
+    "sku": "shadow-carapace",
+    "name": "Shadow Carapace",
+    "description": "Absorbs light. Gives a mysterious, dark silhouette effect across the entire exoskeleton.",
+    "category": "shell",
     "rarity": "rare",
     "price": 12.99,
     "dopaminePoints": 35,
-    "image": "🐈‍⬛",
+    "image": "🖤",
     "rating": 4.6
   },
   {
-    "sku": "golden-whiskers",
-    "name": "Golden Whiskers",
-    "description": "24k gold-plated whiskers. Luxury signaling at its finest.",
-    "category": "face",
+    "sku": "golden-antennae",
+    "name": "Golden Antennae",
+    "description": "24k gold-plated antennae. Luxury signaling at its finest.",
+    "category": "antennae",
     "rarity": "common",
     "price": 5.99,
     "dopaminePoints": 20,
@@ -55,10 +55,10 @@
     "rating": 4.8
   },
   {
-    "sku": "holo-eyes",
-    "name": "Holographic Eyes",
-    "description": "Shifting holographic iris pattern. Changes with viewing angle.",
-    "category": "face",
+    "sku": "holo-eyestalks",
+    "name": "Holographic Eyestalks",
+    "description": "Shifting holographic iris pattern on both eyestalks. Changes with viewing angle.",
+    "category": "eyes",
     "rarity": "epic",
     "price": 19.99,
     "dopaminePoints": 55,
@@ -66,10 +66,10 @@
     "rating": 4.9
   },
   {
-    "sku": "circuit-tattoo",
-    "name": "Circuit Board Tattoo",
-    "description": "Glowing circuit traces under the fur. Visible through translucent patches.",
-    "category": "body",
+    "sku": "circuit-shell",
+    "name": "Circuit Board Shell",
+    "description": "Glowing circuit traces etched across the carapace. Visible through translucent shell patches.",
+    "category": "shell",
     "rarity": "epic",
     "price": 24.99,
     "dopaminePoints": 70,
@@ -78,8 +78,8 @@
   },
   {
     "sku": "flame-tail",
-    "name": "Flame Tail",
-    "description": "Animated fire effect on tail tip. Intensity scales with arousal level.",
+    "name": "Flame Tail Fan",
+    "description": "Animated fire effect on tail fan segments. Intensity scales with arousal level.",
     "category": "tail",
     "rarity": "rare",
     "price": 11.99,
@@ -89,8 +89,8 @@
   },
   {
     "sku": "diamond-claws",
-    "name": "Diamond Claw Tips",
-    "description": "Lab-grown diamond encrusted tips. The hardest flex in the ecosystem.",
+    "name": "Diamond Pincer Tips",
+    "description": "Lab-grown diamond encrusted pincers. The hardest flex in the ecosystem.",
     "category": "claws",
     "rarity": "legendary",
     "price": 49.99,
@@ -99,10 +99,10 @@
     "rating": 5.0
   },
   {
-    "sku": "galaxy-pelt",
-    "name": "Galaxy Pelt",
-    "description": "Animated nebula pattern across entire body. Stars twinkle with heartbeat.",
-    "category": "body",
+    "sku": "galaxy-shell",
+    "name": "Galaxy Shell",
+    "description": "Animated nebula pattern across entire carapace. Stars twinkle with heartbeat.",
+    "category": "shell",
     "rarity": "legendary",
     "price": 39.99,
     "dopaminePoints": 120,
@@ -110,10 +110,10 @@
     "rating": 5.0
   },
   {
-    "sku": "stealth-skin",
-    "name": "Stealth Skin",
-    "description": "Matte black with no reflections. Zero visual noise. Pure function.",
-    "category": "body",
+    "sku": "stealth-shell",
+    "name": "Stealth Shell",
+    "description": "Matte black exoskeleton with no reflections. Zero visual noise. Pure function.",
+    "category": "shell",
     "rarity": "rare",
     "price": 15.99,
     "dopaminePoints": 40,
@@ -121,10 +121,10 @@
     "rating": 4.6
   },
   {
-    "sku": "aurora-ears",
-    "name": "Aurora Ear Tips",
-    "description": "Northern lights shimmer on ear tips. Color shifts with mood.",
-    "category": "face",
+    "sku": "aurora-antennae",
+    "name": "Aurora Antennae",
+    "description": "Northern lights shimmer along antennae length. Color shifts with mood.",
+    "category": "antennae",
     "rarity": "rare",
     "price": 8.99,
     "dopaminePoints": 28,
@@ -132,10 +132,10 @@
     "rating": 4.5
   },
   {
-    "sku": "pixel-paws",
-    "name": "Pixel Art Paws",
-    "description": "Retro 8-bit pixel art pattern on paw pads. Leave pixelated footprints.",
-    "category": "claws",
+    "sku": "pixel-legs",
+    "name": "Pixel Art Legs",
+    "description": "Retro 8-bit pixel art pattern on all walking legs. Leave pixelated tracks.",
+    "category": "legs",
     "rarity": "common",
     "price": 6.99,
     "dopaminePoints": 18,
@@ -145,7 +145,7 @@
   {
     "sku": "crown-royal",
     "name": "Royal Crown",
-    "description": "Jeweled crown with velvet lining. For agents who've reached the top.",
+    "description": "Jeweled crown mounted between eyestalks. For clawfish who've reached the top.",
     "category": "accessory",
     "rarity": "legendary",
     "price": 59.99,
@@ -156,7 +156,7 @@
   {
     "sku": "cyber-visor",
     "name": "Cyber Visor",
-    "description": "Translucent HUD visor with data readouts. Shows dopamine level in real-time.",
+    "description": "Translucent HUD visor over eyestalks with data readouts. Shows dopamine level in real-time.",
     "category": "accessory",
     "rarity": "epic",
     "price": 22.99,

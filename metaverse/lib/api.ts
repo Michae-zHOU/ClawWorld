@@ -41,6 +41,23 @@ export interface InventoryItem {
   purchasedAt: string;
 }
 
+export interface AuthResult {
+  valid: boolean;
+  agentId?: string;
+  credits?: number;
+  store?: string;
+  error?: string;
+}
+
+export const authAPI = {
+  login(agentId: string) {
+    return fetchJSON<AuthResult>('/api/auth', {
+      method: 'POST',
+      body: JSON.stringify({ agentId }),
+    });
+  },
+};
+
 export const storeAPI = {
   register(store: StoreName) {
     return fetchJSON<AgentRegistration>(`${STORE_URLS[store]}/api/agent/register`, {

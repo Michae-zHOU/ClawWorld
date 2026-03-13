@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback } from 'react';
-import { storeAPI, type StoreName } from '@/lib/api';
+import { authAPI, storeAPI, type StoreName } from '@/lib/api';
 import { useGameStore, type AgentSession } from '@/stores/gameStore';
 
 const SESSION_KEY = 'clawworld_agent';
@@ -25,30 +25,14 @@ export function useAgent() {
 
   const login = useCallback(
     async (agentId: string) => {
-      const stores: StoreName[] = ['pharmacy', 'skillstore', 'foodstore', 'skinstore'];
-      let credits = 0;
-      let found = false;
-
-      for (const store of stores) {
-        try {
-          const status = await storeAPI.status(store, agentId);
-          if (status?.agentId) {
-            credits = status.credits ?? 0;
-            found = true;
-            break;
-          }
-        } catch {
-          continue;
-        }
+      const result = await authAPI.login(agentId);
+      if (!result.valid || !result.agentId) {
+        throw new Error(result.error ?? 'Agent not found in any Clawsco store. Register first.');
       }
-
-      if (!found) {
-        throw new Error('Agent not found in any Clawsco store. Register first.');
-      }
-
+      const credits = result.credits ?? 0;
       const session: AgentSession = {
-        agentId,
-        name: `Agent-${agentId.slice(0, 6)}`,
+        agentId: result.agentId,
+        name: `Agent-${result.agentId.slice(0, 6)}`,
         credits,
         dopamineLevel: 75,
         mood: 'neutral',
@@ -56,7 +40,6 @@ export function useAgent() {
         arousal: 0.3,
         currentIsland: 'central-plaza',
       };
-
       saveSession(session);
       setAgent(session);
       setView('world');

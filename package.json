@@ -10,6 +10,8 @@
     "dev:drugstore": "npm --workspace clawsco/drugstore run dev",
     "dev:skinstore": "npm --workspace clawsco/skinstore run dev",
     "dev:foodstore": "npm --workspace clawsco/foodstore run dev",
-    "dev:skillstore": "npm --workspace clawsco/skillstore run dev"
+    "dev:skillstore": "npm --workspace clawsco/skillstore run dev",
+    "dev:metaverse": "cd metaverse && npm run dev",
+    "dev:claw-world": "npm --workspace services/claw-world run dev"
   }
 }

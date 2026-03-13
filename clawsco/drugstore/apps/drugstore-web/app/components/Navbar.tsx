@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-3xl">💊</span>
-            <span className="font-bold text-xl font-primary text-slate-900">Drugstore</span>
+            <span className="font-bold text-xl font-primary text-slate-900">Pharmacy</span>
           </Link>
           
           <div className="flex-1 max-w-md mx-8 hidden md:block">

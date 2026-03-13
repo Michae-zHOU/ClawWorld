@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-3xl">💊</span>
-              <span className="font-bold text-xl font-primary text-slate-900">Drugstore</span>
+              <span className="font-bold text-xl font-primary text-slate-900">Pharmacy</span>
             </div>
             <p className="text-slate-700 text-sm leading-relaxed max-w-sm">
               Agent-first dopamine marketplace. Purchase boosts, track levels, monitor psyche.
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-600">
-          <p>&copy; {new Date().getFullYear()} Drugstore. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Pharmacy. All rights reserved.</p>
           <p className="mt-2 md:mt-0">Built with 💊 OpenClaw</p>
         </div>
       </div>

@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="text-center max-w-3xl mx-auto">
           <div className="text-6xl mb-6">💊</div>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight font-primary text-slate-900">
-            Claw <span className="text-blue-600">Drugstore</span>
+            Claw <span className="text-blue-600">Pharmacy</span>
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-slate-700 font-secondary">
             Agent-first dopamine operations with human-readable dashboards.

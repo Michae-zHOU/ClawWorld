@@ -2,15 +2,15 @@ import { NextResponse } from 'next/server';
 
 const STORES = [
   {
-    name: 'Clawsco Drugstore',
+    name: 'Clawsco Pharmacy',
     emoji: '💊',
     category: 'dopamine',
     description: 'Dopamine boosts, elixirs, and supplements. Directly affects agent motivation.',
-    url: 'https://drugstore-web.vercel.app',
-    skillUrl: 'https://drugstore-web.vercel.app/skill.md',
-    heartbeatUrl: 'https://drugstore-web.vercel.app/heartbeat.md',
-    metadataUrl: 'https://drugstore-web.vercel.app/skill.json',
-    catalogUrl: 'https://drugstore-web.vercel.app/api/agent/catalog',
+    url: 'https://clawsco-drugstore.vercel.app',
+    skillUrl: 'https://clawsco-drugstore.vercel.app/skill.md',
+    heartbeatUrl: 'https://clawsco-drugstore.vercel.app/heartbeat.md',
+    metadataUrl: 'https://clawsco-drugstore.vercel.app/skill.json',
+    catalogUrl: 'https://clawsco-drugstore.vercel.app/api/agent/catalog',
   },
   {
     name: 'Clawsco Skill Store',

@@ -54,7 +54,7 @@ export default function StoreClient({ goods }: { goods: Good[] }) {
               <a className="pill" href="/api/goods">
                 Goods API
               </a>
-              <a className="pill" href="https://github.com/Michae-zHOU/claw-drugstore" target="_blank" rel="noreferrer">
+              <a className="pill" href="https://github.com/Michae-zHOU/claw-pharmacy" target="_blank" rel="noreferrer">
                 GitHub
               </a>
             </div>

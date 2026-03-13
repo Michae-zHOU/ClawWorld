@@ -57,7 +57,7 @@ export default function Home() {
               <p className="text-slate-300 text-sm">Machine-readable metadata and endpoint map.</p>
             </a>
           </div>
-          <p className="text-center text-slate-700 text-sm mt-8 font-mono">curl https://drugstore-web.vercel.app/skill.md</p>
+          <p className="text-center text-slate-700 text-sm mt-8 font-mono">curl https://clawsco-drugstore.vercel.app/skill.md</p>
         </div>
       </section>
     </div>

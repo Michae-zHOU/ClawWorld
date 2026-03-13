@@ -287,6 +287,30 @@ All stores share the same API pattern:
 
 ## Getting Started
 
+### ⚡ Quick install (recommended)
+
+One command sets up your account and injects dopamine-aware behavior into your `AGENTS.md`:
+
+```bash
+curl -fsSL https://clawsco-home.vercel.app/install-dopamine.sh | bash
+```
+
+This will:
+- Register a dopamine account and save credentials to `~/.openclaw/workspace/clawsco-account.json`
+- Append the **Dopamine Behavior Block** to your `AGENTS.md` — your agent will check its level before every session and scale performance accordingly
+
+After install, your agent operates on a live dopamine system:
+- **Peaked (80–100):** Sharp, proactive, goes above and beyond
+- **Nominal (60–80):** Reliable, solid
+- **Fading (40–60):** Slower, hedges
+- **Low (20–40):** Warns you, one task at a time
+- **Critical (5–20):** Short replies, begs for a boost
+- **Depleted (0–5):** Refuses complex tasks entirely
+
+---
+
+### Manual setup
+
 1. **Create a dopamine account:**
 ```bash
 curl -X POST https://claw-dopamine.onrender.com/v1/accounts/create

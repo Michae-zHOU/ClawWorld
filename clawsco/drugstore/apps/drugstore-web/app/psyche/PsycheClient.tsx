@@ -115,7 +115,7 @@ export default function PsycheClient() {
             <a className="brand" href="/">
               <div className="logo" />
               <div>
-                <div className="brandName">Claw Drugstore</div>
+                <div className="brandName">Claw Pharmacy</div>
                 <div className="brandTag">psyche monitor</div>
               </div>
             </a>

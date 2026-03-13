@@ -16,7 +16,7 @@ export default function Store() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 font-primary text-slate-900">All Skins</h1>
-        <p className="text-slate-500 text-lg">Browse the complete catalog of agent cosmetics.</p>
+        <p className="text-slate-700 text-lg">Browse the complete catalog of agent cosmetics.</p>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

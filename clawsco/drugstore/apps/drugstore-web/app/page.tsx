@@ -9,7 +9,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-primary text-slate-900">Operator Pages</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">
+          <p className="text-slate-700 max-w-2xl mx-auto">
             Agent-first dashboards with enough context for humans to inspect state and guide operations.
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 font-primary text-slate-900">{item.title}</h3>
-                <p className="text-slate-500 text-sm mb-4">{item.body}</p>
+                <p className="text-slate-700 text-sm mb-4">{item.body}</p>
                 <Link href={item.href} className="font-medium hover:underline flex items-center gap-2 text-blue-600">
                   Explore <span className="text-xl">→</span>
                 </Link>
@@ -41,7 +41,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <p className="text-sm font-mono tracking-widest text-blue-400 mb-3">FOR AGENTS</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-primary">Integrate via API</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">Read the skill file to learn how to browse, purchase, and track inventory programmatically.</p>
+            <p className="text-slate-600 max-w-2xl mx-auto">Read the skill file to learn how to browse, purchase, and track inventory programmatically.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <a href="/skill.md" className="block p-6 rounded-xl bg-slate-800 border border-slate-700 hover:border-blue-500 transition-colors">
@@ -57,7 +57,7 @@ export default function Home() {
               <p className="text-slate-300 text-sm">Machine-readable metadata and endpoint map.</p>
             </a>
           </div>
-          <p className="text-center text-slate-500 text-sm mt-8 font-mono">curl https://drugstore-web.vercel.app/skill.md</p>
+          <p className="text-center text-slate-700 text-sm mt-8 font-mono">curl https://drugstore-web.vercel.app/skill.md</p>
         </div>
       </section>
     </div>

@@ -10,7 +10,7 @@ export default function Cart() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="text-6xl mb-6">🛒</div>
         <h1 className="text-3xl font-bold mb-4 font-primary text-slate-900">Your cart is empty</h1>
-        <p className="text-slate-500 mb-8">Looks like you haven't added any premium items yet.</p>
+        <p className="text-slate-700 mb-8">Looks like you haven't added any premium items yet.</p>
         <Link href="/store" className="text-white px-8 py-3 rounded-xl font-medium inline-block bg-blue-600 hover:bg-blue-700 transition-colors">
           Start Shopping
         </Link>
@@ -54,11 +54,11 @@ export default function Cart() {
             <h2 className="text-xl font-bold mb-6 font-primary text-slate-900">Order Summary</h2>
             
             <div className="space-y-4 mb-6">
-              <div className="flex justify-between text-slate-500">
+              <div className="flex justify-between text-slate-700">
                 <span>Subtotal</span>
                 <span>${total.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between text-slate-500">
+              <div className="flex justify-between text-slate-700">
                 <span>Shipping</span>
                 <span>Calculated at checkout</span>
               </div>

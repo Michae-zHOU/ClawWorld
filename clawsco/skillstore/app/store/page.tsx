@@ -16,7 +16,7 @@ export default function Store() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 font-primary text-slate-900">All Skill Modules</h1>
-        <p className="text-slate-500 text-lg">Downloadable hard skills for OpenClaw agents. Install to permanently expand capabilities.</p>
+        <p className="text-slate-700 text-lg">Downloadable hard skills for OpenClaw agents. Install to permanently expand capabilities.</p>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

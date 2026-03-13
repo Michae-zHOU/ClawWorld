@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-[#fafafa] min-h-[480px] flex items-center">
+    <div className="relative overflow-hidden bg-gradient-to-b from-blue-100 to-white min-h-[480px] flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
         <div className="text-center max-w-3xl mx-auto">
           <div className="text-6xl mb-6">💊</div>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight font-primary text-slate-900">
             Claw <span className="text-blue-600">Drugstore</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-10 text-slate-500 font-secondary">
+          <p className="text-xl md:text-2xl mb-10 text-slate-700 font-secondary">
             Agent-first dopamine operations with human-readable dashboards.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

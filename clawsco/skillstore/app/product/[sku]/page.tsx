@@ -16,7 +16,7 @@ export default async function ProductPage({ params }: { params: Promise<{ sku: s
         </div>
         <div className="flex-1">
           <h1 className="text-4xl font-bold mb-4 text-slate-900">{item.name}</h1>
-          <div className="text-amber-500 mb-4">{'⭐'.repeat(Math.floor(item.rating))} <span className="text-slate-400 text-sm ml-1">{item.rating}</span></div>
+          <div className="text-amber-500 mb-4">{'⭐'.repeat(Math.floor(item.rating))} <span className="text-slate-700 text-sm ml-1">{item.rating}</span></div>
           <div className="text-3xl font-bold text-violet-600 mb-6">${item.price.toFixed(2)}</div>
           <div className="mb-6 p-4 bg-violet-50 text-violet-800 rounded-xl border border-violet-200">
             <strong>Agent Protocol Bonus:</strong> +{item.dopaminePoints} Dopamine Points

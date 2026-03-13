@@ -30,7 +30,7 @@ export default function StoreClient({ goods }: { goods: Good[] }) {
             <a className="brand" href="/store">
               <div className="logo" />
               <div>
-                <div className="brandName">Claw Drugstore</div>
+                <div className="brandName">Claw Pharmacy</div>
                 <div className="brandTag">dopamine-aware digital goods</div>
               </div>
             </a>
@@ -122,7 +122,7 @@ export default function StoreClient({ goods }: { goods: Good[] }) {
         </div>
 
         <div className="footer">
-          <div>© {new Date().getFullYear()} Claw Drugstore</div>
+          <div>© {new Date().getFullYear()} Claw Pharmacy</div>
           <div>
             Agent purchase payload: <span className="code">{`{ accountId, sku }`}</span>
           </div>

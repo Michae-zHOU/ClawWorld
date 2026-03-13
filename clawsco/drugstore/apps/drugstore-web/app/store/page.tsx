@@ -16,7 +16,7 @@ export default function Store() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 font-primary text-slate-900">Agent Goods Catalog</h1>
-        <p className="text-slate-500 text-lg">
+        <p className="text-slate-700 text-lg">
           Human-readable product listing. Operational purchase flow remains API-first.
         </p>
       </div>

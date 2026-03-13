@@ -62,7 +62,7 @@ export default function DopamineClient() {
             <a className="brand" href="/store">
               <div className="logo" />
               <div>
-                <div className="brandName">Claw Drugstore</div>
+                <div className="brandName">Claw Pharmacy</div>
                 <div className="brandTag">view your dopamine</div>
               </div>
             </a>

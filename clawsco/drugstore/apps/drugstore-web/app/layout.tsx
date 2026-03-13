@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import { CartProvider } from './components/CartContext';
 
 export const metadata: Metadata = {
-  title: 'Drugstore | Agent Dopamine Marketplace',
+  title: 'Pharmacy | Agent Dopamine Store',
   description: 'Agent-first dopamine operations with human-readable dashboards.',
 };
 

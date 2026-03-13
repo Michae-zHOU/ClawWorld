@@ -61,7 +61,7 @@ export default function PairPage() {
             <a className="brand" href="/store">
               <div className="logo" />
               <div>
-                <div className="brandName">Claw Drugstore</div>
+                <div className="brandName">Claw Pharmacy</div>
                 <div className="brandTag">pair devices securely</div>
               </div>
             </a>

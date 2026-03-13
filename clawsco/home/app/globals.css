@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #060608;
+  --surface: #0f0f12;
+  --border: #1c1c22;
+  --muted: #4a4a58;
+  --text: #e8e8f0;
+  --faint: #2a2a35;
+
+  --pharmacy: #3b82f6;
+  --pharmacy-glow: rgba(59,130,246,0.18);
+  --skinstore: #ec4899;
+  --skinstore-glow: rgba(236,72,153,0.18);
+  --foodstore: #f97316;
+  --foodstore-glow: rgba(249,115,22,0.18);
+  --skillstore: #a855f7;
+  --skillstore-glow: rgba(168,85,247,0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Grid background */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Radial glow center */
+.hero-glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse at center,
+    rgba(100, 80, 255, 0.12) 0%,
+    rgba(59, 130, 246, 0.06) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Noise overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Store card */
+.store-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.store-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.store-card:hover {
+  transform: translateY(-6px);
+}
+
+.store-card:hover::before {
+  opacity: 1;
+}
+
+.store-card.pharmacy::before  { background: radial-gradient(ellipse at 50% 0%, var(--pharmacy-glow), transparent 70%); }
+.store-card.skinstore::before  { background: radial-gradient(ellipse at 50% 0%, var(--skinstore-glow), transparent 70%); }
+.store-card.foodstore::before  { background: radial-gradient(ellipse at 50% 0%, var(--foodstore-glow), transparent 70%); }
+.store-card.skillstore::before { background: radial-gradient(ellipse at 50% 0%, var(--skillstore-glow), transparent 70%); }
+
+.store-card.pharmacy:hover  { border-color: rgba(59,130,246,0.5);  box-shadow: 0 0 40px var(--pharmacy-glow);  }
+.store-card.skinstore:hover  { border-color: rgba(236,72,153,0.5);  box-shadow: 0 0 40px var(--skinstore-glow);  }
+.store-card.foodstore:hover  { border-color: rgba(249,115,22,0.5);  box-shadow: 0 0 40px var(--foodstore-glow);  }
+.store-card.skillstore:hover { border-color: rgba(168,85,247,0.5);  box-shadow: 0 0 40px var(--skillstore-glow); }
+
+/* Pill badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+/* Stat bar */
+.stat-bar {
+  height: 3px;
+  border-radius: 999px;
+  background: var(--faint);
+  overflow: hidden;
+}
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Dopamine meter */
+.dopamine-ring {
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+.dopamine-ring svg {
+  transform: rotate(-90deg);
+}
+.dopamine-ring-track { fill: none; stroke: var(--faint); stroke-width: 8; }
+.dopamine-ring-fill  { fill: none; stroke-width: 8; stroke-linecap: round;
+  stroke-dasharray: 310;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Flow line */
+.flow-line {
+  width: 1px;
+  background: linear-gradient(to bottom, var(--border), transparent);
+  position: absolute;
+}
+
+/* Glyph icon */
+.store-glyph {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+/* CTA button */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cta-primary {
+  background: #fff;
+  color: #060608;
+  border: none;
+}
+.cta-primary:hover {
+  background: #e8e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,255,255,0.12);
+}
+
+.cta-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.cta-ghost:hover {
+  border-color: var(--muted);
+  background: var(--surface);
+}
+
+/* Section titles */
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* Animate in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeup {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+/* Scrolling marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+.marquee-track:hover { animation-play-state: paused; }

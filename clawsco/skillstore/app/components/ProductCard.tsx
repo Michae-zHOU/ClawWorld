@@ -25,8 +25,8 @@ export default function ProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <div className="group rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-      <div className="w-full aspect-square rounded-xl mb-4 flex items-center justify-center text-7xl bg-violet-50 transition-transform duration-300 group-hover:scale-105">
+    <div className="group rounded-2xl p-6 border border-slate-300 bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <div className="w-full aspect-square rounded-xl mb-4 flex items-center justify-center text-7xl bg-violet-100 transition-transform duration-300 group-hover:scale-105">
         {product.emoji}
       </div>
       
@@ -35,16 +35,15 @@ export default function ProductCard({ product }: { product: Product }) {
         <span className="font-bold text-lg text-violet-600">${product.price.toFixed(2)}</span>
       </div>
       
-      <p className="text-sm text-slate-500 mb-4 line-clamp-2 font-secondary">
+      <p className="text-sm text-slate-700 mb-4 line-clamp-2 font-secondary">
         {product.description}
       </p>
       
       <div className="flex items-center gap-2 mb-4">
         <div className="text-sm text-amber-500">
           {'★'.repeat(Math.floor(product.rating))}
-          {'☆'.repeat(5 - Math.floor(product.rating))}
         </div>
-        <span className="text-xs text-slate-400">({product.reviews})</span>
+        <span className="text-xs text-slate-600">({product.reviews})</span>
       </div>
       
       <div className="flex items-center justify-between mt-auto">

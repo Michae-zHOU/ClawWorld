@@ -4,6 +4,8 @@ import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { Physics } from '@react-three/rapier';
 import { useState } from 'react';
+import { EffectComposer, Bloom, Vignette, ToneMapping } from '@react-three/postprocessing';
+import { ToneMappingMode } from 'postprocessing';
 import World from './World';
 import HUD from './UI/HUD';
 import StoreModal from './UI/StoreModal';
@@ -31,6 +33,21 @@ function LoadingScreen() {
   );
 }
 
+function PostProcessing() {
+  return (
+    <EffectComposer multisampling={4}>
+      <Bloom
+        intensity={0.8}
+        luminanceThreshold={0.6}
+        luminanceSmoothing={0.4}
+        mipmapBlur
+      />
+      <Vignette offset={0.3} darkness={0.6} />
+      <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
+    </EffectComposer>
+  );
+}
+
 export default function WorldPage() {
   useDopamine();
   useQuests();
@@ -49,13 +66,20 @@ export default function WorldPage() {
       <Suspense fallback={<LoadingScreen />}>
         <Canvas
           shadows
-          camera={{ fov: 60, near: 0.1, far: 1000 }}
-          gl={{ antialias: true, alpha: false }}
+          camera={{ fov: 55, near: 0.5, far: 600 }}
+          gl={{
+            antialias: true,
+            alpha: false,
+            powerPreference: 'high-performance',
+            toneMapping: 0,
+          }}
+          dpr={[1, 2]}
           style={{ position: 'absolute', inset: 0 }}
         >
           <Physics gravity={[0, -20, 0]} timeStep="vary">
             <World />
           </Physics>
+          <PostProcessing />
         </Canvas>
       </Suspense>
 
@@ -67,7 +91,6 @@ export default function WorldPage() {
       {showTradePanel && <TradePanel />}
       {showGameMenu && <GameMenu onClose={() => setShowGameMenu(false)} />}
 
-      {/* Quick action buttons */}
       <div className="absolute bottom-14 right-3 z-10 flex flex-col gap-2 pointer-events-auto">
         <button
           onClick={() => setShowGameMenu(true)}

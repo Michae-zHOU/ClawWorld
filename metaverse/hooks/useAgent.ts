@@ -27,7 +27,10 @@ export function useAgent() {
     async (agentId: string) => {
       const result = await authAPI.login(agentId);
       if (!result.valid || !result.agentId) {
-        throw new Error(result.error ?? 'Agent not found in any Clawsco store. Register first.');
+        throw new Error(
+        result.error ??
+          'This Agent ID was not found in any Clawsco store. New? Use "Register Free" below to create an agent, then enter your new Agent ID.',
+      );
       }
       const credits = result.credits ?? 0;
       const session: AgentSession = {

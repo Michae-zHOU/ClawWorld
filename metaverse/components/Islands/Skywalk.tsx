@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { RigidBody } from '@react-three/rapier';
 import * as THREE from 'three';
@@ -26,8 +26,8 @@ export default function Skywalk({ from, to }: Props) {
 
   useFrame(({ clock }) => {
     if (tubeRef.current) {
-      const mat = tubeRef.current.material as THREE.MeshStandardMaterial;
-      mat.emissiveIntensity = 0.2 + Math.sin(clock.elapsedTime * 2) * 0.1;
+      (tubeRef.current.material as THREE.MeshStandardMaterial).emissiveIntensity =
+        0.3 + Math.sin(clock.elapsedTime * 1.5) * 0.15;
     }
   });
 
@@ -38,26 +38,26 @@ export default function Skywalk({ from, to }: Props) {
           <boxGeometry args={[3, 0.5, length]} />
           <meshStandardMaterial
             color="#1a1a3e"
-            emissive="#4c1d95"
+            emissive="#6d28d9"
             emissiveIntensity={0.3}
             transparent
-            opacity={0.7}
-            roughness={0.1}
-            metalness={0.8}
+            opacity={0.8}
+            roughness={0.05}
+            metalness={0.9}
+            envMapIntensity={1.5}
           />
         </mesh>
       </RigidBody>
 
-      {/* Railings */}
       {[-1.3, 1.3].map((xOff) => (
         <mesh key={xOff} position={[xOff, 0.8, 0]}>
-          <boxGeometry args={[0.1, 1.2, length]} />
+          <boxGeometry args={[0.08, 1.2, length]} />
           <meshStandardMaterial
             color="#7c3aed"
             emissive="#7c3aed"
-            emissiveIntensity={0.2}
+            emissiveIntensity={0.5}
             transparent
-            opacity={0.5}
+            opacity={0.6}
           />
         </mesh>
       ))}

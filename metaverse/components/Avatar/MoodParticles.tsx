@@ -11,19 +11,19 @@ function getMoodConfig(mood: string) {
   switch (mood) {
     case 'joy':
     case 'happy':
-      return { color: '#fbbf24', size: 0.06, speed: 1.5, radius: 1.2 };
+      return { color: '#fbbf24', size: 0.06, speed: 1.5, radius: 1.2, emissive: 3 };
     case 'focus':
     case 'curious':
-      return { color: '#22d3ee', size: 0.05, speed: 0.8, radius: 1 };
+      return { color: '#22d3ee', size: 0.05, speed: 0.8, radius: 1, emissive: 2 };
     case 'frustrated':
     case 'stressed':
-      return { color: '#ef4444', size: 0.07, speed: 2, radius: 1.4 };
+      return { color: '#ef4444', size: 0.07, speed: 2, radius: 1.4, emissive: 4 };
     case 'bored':
-      return { color: '#6b7280', size: 0.04, speed: 0.3, radius: 0.8 };
+      return { color: '#6b7280', size: 0.04, speed: 0.3, radius: 0.8, emissive: 1 };
     case 'calm':
-      return { color: '#34d399', size: 0.05, speed: 0.5, radius: 1 };
+      return { color: '#34d399', size: 0.05, speed: 0.5, radius: 1, emissive: 2 };
     default:
-      return { color: '#a78bfa', size: 0.04, speed: 0.6, radius: 0.9 };
+      return { color: '#a78bfa', size: 0.04, speed: 0.6, radius: 0.9, emissive: 1.5 };
   }
 }
 
@@ -57,8 +57,15 @@ export default function MoodParticles() {
 
   return (
     <instancedMesh ref={ref} args={[undefined, undefined, PARTICLE_COUNT]}>
-      <sphereGeometry args={[1, 6, 6]} />
-      <meshBasicMaterial color={config.color} transparent opacity={0.6} depthWrite={false} />
+      <sphereGeometry args={[1, 8, 8]} />
+      <meshStandardMaterial
+        color={config.color}
+        emissive={config.color}
+        emissiveIntensity={config.emissive}
+        transparent
+        opacity={0.7}
+        depthWrite={false}
+      />
     </instancedMesh>
   );
 }

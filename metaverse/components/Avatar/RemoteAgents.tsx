@@ -11,7 +11,6 @@ function RemoteAvatar({
   position,
   rotation,
   dopamineLevel,
-  mood,
 }: {
   name: string;
   position: [number, number, number];
@@ -45,35 +44,37 @@ function RemoteAvatar({
 
   return (
     <group ref={groupRef} position={position}>
-      {/* Body */}
       <mesh position={[0, 1, 0]} castShadow>
         <capsuleGeometry args={[0.4, 0.8, 8, 16]} />
-        <meshStandardMaterial color="#6d28d9" roughness={0.4} metalness={0.3} />
+        <meshStandardMaterial color="#6d28d9" roughness={0.3} metalness={0.4} envMapIntensity={1} />
       </mesh>
 
-      {/* Head */}
-      <mesh position={[0, 2.1, 0]} castShadow>
-        <sphereGeometry args={[0.4, 16, 16]} />
-        <meshStandardMaterial color="#8b5cf6" roughness={0.3} metalness={0.2} />
+      <mesh position={[0, 2.1, 0]}>
+        <sphereGeometry args={[0.4, 12, 12]} />
+        <meshStandardMaterial color="#8b5cf6" roughness={0.2} metalness={0.3} />
       </mesh>
 
-      {/* Eyes */}
       <mesh position={[0.15, 2.2, 0.35]}>
-        <sphereGeometry args={[0.08, 8, 8]} />
-        <meshStandardMaterial color="#f472b6" emissive="#f472b6" emissiveIntensity={1} />
+        <sphereGeometry args={[0.08, 6, 6]} />
+        <meshStandardMaterial color="#f472b6" emissive="#f472b6" emissiveIntensity={3} />
       </mesh>
       <mesh position={[-0.15, 2.2, 0.35]}>
-        <sphereGeometry args={[0.08, 8, 8]} />
-        <meshStandardMaterial color="#f472b6" emissive="#f472b6" emissiveIntensity={1} />
+        <sphereGeometry args={[0.08, 6, 6]} />
+        <meshStandardMaterial color="#f472b6" emissive="#f472b6" emissiveIntensity={3} />
       </mesh>
 
-      {/* Aura */}
       <mesh position={[0, 1.2, 0]}>
-        <sphereGeometry args={[1.1, 12, 12]} />
-        <meshBasicMaterial color={auraColor} transparent opacity={0.12} depthWrite={false} />
+        <sphereGeometry args={[1.1, 10, 10]} />
+        <meshStandardMaterial
+          color={auraColor}
+          emissive={auraColor}
+          emissiveIntensity={0.8}
+          transparent
+          opacity={0.12}
+          depthWrite={false}
+        />
       </mesh>
 
-      {/* Name */}
       <Text
         position={[0, 3, 0]}
         fontSize={0.25}

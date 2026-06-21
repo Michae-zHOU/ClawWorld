@@ -22,15 +22,25 @@ export default function DopamineAura() {
 
   useFrame(({ clock }) => {
     if (!meshRef.current) return;
-    const scale = 1.2 + Math.sin(clock.elapsedTime * 2) * 0.1 * intensity;
+    const scale = 1.2 + Math.sin(clock.elapsedTime * 2) * 0.15 * intensity;
     meshRef.current.scale.setScalar(scale);
-    (meshRef.current.material as THREE.MeshBasicMaterial).opacity = intensity * 0.3;
+    const mat = meshRef.current.material as THREE.MeshStandardMaterial;
+    mat.opacity = intensity * 0.25;
+    mat.emissiveIntensity = 1 + Math.sin(clock.elapsedTime * 3) * 0.5;
   });
 
   return (
     <mesh ref={meshRef} position={[0, 1.2, 0]}>
-      <sphereGeometry args={[1.2, 16, 16]} />
-      <meshBasicMaterial color={color} transparent opacity={0.15} depthWrite={false} />
+      <sphereGeometry args={[1.2, 12, 12]} />
+      <meshStandardMaterial
+        color={color}
+        emissive={color}
+        emissiveIntensity={1}
+        transparent
+        opacity={0.2}
+        depthWrite={false}
+        roughness={0.5}
+      />
     </mesh>
   );
 }

@@ -8,19 +8,27 @@ import { useGameStore } from '@/stores/gameStore';
 function RainDrops({ count }: { count: number }) {
   const ref = useRef<THREE.InstancedMesh>(null);
   const dummy = useMemo(() => new THREE.Object3D(), []);
-  const speeds = useMemo(() => Array.from({ length: count }, () => 0.5 + Math.random() * 1), [count]);
+  const state = useMemo(() => {
+    const rng = (seed: number) => {
+      let s = seed;
+      return () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
+    };
+    const r = rng(123);
+    return Array.from({ length: count }, () => ({
+      x: (r() - 0.5) * 200,
+      y: r() * 120,
+      z: (r() - 0.5) * 200,
+      speed: 0.5 + r() * 1,
+    }));
+  }, [count]);
 
   useFrame(() => {
     if (!ref.current) return;
     for (let i = 0; i < count; i++) {
-      dummy.position.set(
-        (Math.random() - 0.5) * 200,
-        ref.current.userData[`y${i}`] ?? 80,
-        (Math.random() - 0.5) * 200,
-      );
-      const y = (ref.current.userData[`y${i}`] ?? 80 + Math.random() * 40) - speeds[i];
-      ref.current.userData[`y${i}`] = y < -10 ? 80 + Math.random() * 40 : y;
-      dummy.position.y = ref.current.userData[`y${i}`];
+      const s = state[i];
+      s.y -= s.speed;
+      if (s.y < -10) s.y = 80 + (s.x * 0.1 + 40);
+      dummy.position.set(s.x, s.y, s.z);
       dummy.scale.set(0.02, 0.5, 0.02);
       dummy.updateMatrix();
       ref.current.setMatrixAt(i, dummy.matrix);
@@ -31,7 +39,7 @@ function RainDrops({ count }: { count: number }) {
   return (
     <instancedMesh ref={ref} args={[undefined, undefined, count]}>
       <cylinderGeometry args={[0.02, 0.02, 0.5, 4]} />
-      <meshBasicMaterial color="#6680aa" transparent opacity={0.3} />
+      <meshStandardMaterial color="#8899bb" emissive="#4466aa" emissiveIntensity={0.3} transparent opacity={0.4} />
     </instancedMesh>
   );
 }
@@ -40,7 +48,12 @@ function FogParticles({ count, color }: { count: number; color: string }) {
   const ref = useRef<THREE.InstancedMesh>(null);
   const dummy = useMemo(() => new THREE.Object3D(), []);
   const offsets = useMemo(
-    () => Array.from({ length: count }, () => ({ x: (Math.random() - 0.5) * 150, z: (Math.random() - 0.5) * 150, speed: 0.2 + Math.random() * 0.3, phase: Math.random() * Math.PI * 2 })),
+    () => Array.from({ length: count }, (_, i) => ({
+      x: (Math.sin(i * 7.3) * 0.5) * 150,
+      z: (Math.cos(i * 13.7) * 0.5) * 150,
+      speed: 0.2 + (i % 5) * 0.06,
+      phase: (i / count) * Math.PI * 2,
+    })),
     [count],
   );
 
@@ -64,7 +77,7 @@ function FogParticles({ count, color }: { count: number; color: string }) {
   return (
     <instancedMesh ref={ref} args={[undefined, undefined, count]}>
       <sphereGeometry args={[1, 8, 8]} />
-      <meshBasicMaterial color={color} transparent opacity={0.05} />
+      <meshStandardMaterial color={color} transparent opacity={0.06} depthWrite={false} />
     </instancedMesh>
   );
 }
@@ -74,13 +87,12 @@ export default function MoodWeather() {
 
   const showRain = mood === 'stressed' || mood === 'frustrated';
   const showFog = mood === 'bored';
-  const fogColor = mood === 'curious' ? '#34d399' : '#8888aa';
 
   return (
     <group>
-      {showRain && <RainDrops count={300} />}
-      {showFog && <FogParticles count={40} color={fogColor} />}
-      {mood === 'curious' && <FogParticles count={20} color="#34d399" />}
+      {showRain && <RainDrops count={120} />}
+      {showFog && <FogParticles count={25} color="#8888aa" />}
+      {mood === 'curious' && <FogParticles count={15} color="#34d399" />}
     </group>
   );
 }

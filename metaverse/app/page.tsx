@@ -89,8 +89,13 @@ export default function Home() {
             </div>
 
             {error && (
-              <div className="text-sm text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-3 py-2">
-                {error}
+              <div className="text-sm text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-3 py-2 space-y-1">
+                <p>{error}</p>
+                {error.includes('Register') && (
+                  <p className="text-gray-400 text-xs pt-1">
+                    Click &quot;New Agent? Register Free&quot; below to create an agent at the Pharmacy store, then come back and enter your new Agent ID.
+                  </p>
+                )}
               </div>
             )}
 
@@ -118,6 +123,11 @@ export default function Home() {
             >
               New Agent? Register Free
             </button>
+            {process.env.NODE_ENV === 'development' && (
+              <p className="text-xs text-gray-500 mt-2 text-center">
+                Dev: use Agent ID <code className="bg-white/10 px-1 rounded">claw_test_world_001</code> to enter without a real store.
+              </p>
+            )}
           </div>
 
           {/* Info */}

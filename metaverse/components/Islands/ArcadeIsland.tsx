@@ -2,58 +2,40 @@
 
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text } from '@react-three/drei';
+import { Text, Sparkles } from '@react-three/drei';
 import * as THREE from 'three';
-import { useGameStore } from '@/stores/gameStore';
 
 function ArcadeCabinet({
   position,
   color,
   label,
-  gameId,
 }: {
   position: [number, number, number];
   color: string;
   label: string;
-  gameId: string;
 }) {
-  const ref = useRef<THREE.Mesh>(null);
-  const setView = useGameStore((s) => s.setView);
+  const screenRef = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
-    if (ref.current) {
-      const mat = ref.current.material as THREE.MeshStandardMaterial;
-      mat.emissiveIntensity = 0.4 + Math.sin(clock.elapsedTime * 2 + position[0]) * 0.2;
+    if (screenRef.current) {
+      (screenRef.current.material as THREE.MeshStandardMaterial).emissiveIntensity =
+        1.5 + Math.sin(clock.elapsedTime * 3 + position[0]) * 0.5;
     }
   });
 
   return (
     <group position={position}>
-      {/* Cabinet body */}
-      <mesh ref={ref} position={[0, 1.5, 0]}>
+      <mesh position={[0, 1.5, 0]} castShadow>
         <boxGeometry args={[2, 3, 1.5]} />
-        <meshStandardMaterial color="#1a1a2e" emissive={color} emissiveIntensity={0.5} />
+        <meshStandardMaterial color="#0a0a1e" emissive={color} emissiveIntensity={0.15} roughness={0.2} metalness={0.8} />
       </mesh>
-      {/* Screen */}
-      <mesh position={[0, 2, 0.76]}>
+      <mesh ref={screenRef} position={[0, 2, 0.76]}>
         <planeGeometry args={[1.5, 1.2]} />
-        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.8} />
+        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={2} roughness={0.1} />
       </mesh>
       <Text position={[0, 3.5, 0.76]} fontSize={0.3} color={color} anchorX="center">
         {label}
       </Text>
-      <pointLight position={[0, 2, 1]} intensity={0.3} color={color} distance={5} />
-    </group>
-  );
-}
-
-function NeonArch({ position, color }: { position: [number, number, number]; color: string }) {
-  return (
-    <group position={position}>
-      <mesh>
-        <torusGeometry args={[4, 0.15, 8, 32, Math.PI]} />
-        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.8} />
-      </mesh>
     </group>
   );
 }
@@ -63,41 +45,36 @@ export default function ArcadeIsland() {
 
   return (
     <group position={pos}>
-      {/* Entrance arch */}
-      <NeonArch position={[0, 5, -12]} color="#22d3ee" />
+      <mesh position={[0, 5, -12]}>
+        <torusGeometry args={[4, 0.15, 8, 24, Math.PI]} />
+        <meshStandardMaterial color="#22d3ee" emissive="#22d3ee" emissiveIntensity={2} roughness={0.1} metalness={0.5} />
+      </mesh>
 
       <Text position={[0, 10, -12]} fontSize={1.5} color="#22d3ee" anchorX="center">
         ARCADE
       </Text>
 
-      {/* Game cabinets */}
-      <ArcadeCabinet position={[-8, 0, -5]} color="#22d3ee" label="Dopamine Rush" gameId="dopamine-rush" />
-      <ArcadeCabinet position={[-4, 0, -5]} color="#f472b6" label="Memory Palace" gameId="memory-palace" />
-      <ArcadeCabinet position={[0, 0, -5]} color="#34d399" label="Cook-Off" gameId="cook-off" />
-      <ArcadeCabinet position={[4, 0, -5]} color="#fbbf24" label="Claw Racing" gameId="claw-racing" />
-      <ArcadeCabinet position={[8, 0, -5]} color="#ef4444" label="Colosseum" gameId="colosseum" />
+      <ArcadeCabinet position={[-8, 0, -5]} color="#22d3ee" label="Dopamine Rush" />
+      <ArcadeCabinet position={[-4, 0, -5]} color="#f472b6" label="Memory Palace" />
+      <ArcadeCabinet position={[0, 0, -5]} color="#34d399" label="Cook-Off" />
+      <ArcadeCabinet position={[4, 0, -5]} color="#fbbf24" label="Claw Racing" />
+      <ArcadeCabinet position={[8, 0, -5]} color="#ef4444" label="Colosseum" />
+      <ArcadeCabinet position={[-6, 0, 5]} color="#a78bfa" label="Puzzle Box" />
+      <ArcadeCabinet position={[0, 0, 5]} color="#f97316" label="Tower Defense" />
+      <ArcadeCabinet position={[6, 0, 5]} color="#14b8a6" label="Lucky Slots" />
 
-      {/* More cabinets on the other side */}
-      <ArcadeCabinet position={[-6, 0, 5]} color="#a78bfa" label="Puzzle Box" gameId="puzzle" />
-      <ArcadeCabinet position={[0, 0, 5]} color="#f97316" label="Tower Defense" gameId="tower" />
-      <ArcadeCabinet position={[6, 0, 5]} color="#14b8a6" label="Lucky Slots" gameId="slots" />
-
-      {/* Neon floor strips */}
       {Array.from({ length: 6 }).map((_, i) => (
         <mesh key={i} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.05, -8 + i * 3]}>
           <planeGeometry args={[20, 0.3]} />
           <meshStandardMaterial
             color={['#22d3ee', '#f472b6', '#34d399', '#fbbf24', '#a78bfa', '#ef4444'][i]}
             emissive={['#22d3ee', '#f472b6', '#34d399', '#fbbf24', '#a78bfa', '#ef4444'][i]}
-            emissiveIntensity={0.5}
+            emissiveIntensity={1.2}
           />
         </mesh>
       ))}
 
-      {/* Ambient arcade lighting */}
-      <pointLight position={[0, 6, 0]} intensity={0.5} color="#22d3ee" distance={20} />
-      <pointLight position={[-8, 4, 0]} intensity={0.3} color="#f472b6" distance={10} />
-      <pointLight position={[8, 4, 0]} intensity={0.3} color="#34d399" distance={10} />
+      <Sparkles count={40} scale={[25, 8, 15]} size={2} speed={0.5} color="#22d3ee" opacity={0.4} />
     </group>
   );
 }

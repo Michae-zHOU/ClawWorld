@@ -42,10 +42,14 @@ export default function DopamineAurora() {
         vertexShader: `
           varying vec2 vUv;
           varying vec3 vPosition;
+          uniform float uTime;
           void main() {
             vUv = uv;
             vPosition = position;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            vec3 pos = position;
+            pos.z += sin(pos.x * 0.02 + uTime * 0.3) * 3.0;
+            pos.z += cos(pos.y * 0.05 + uTime * 0.2) * 2.0;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
           }
         `,
         fragmentShader: `
@@ -62,9 +66,9 @@ export default function DopamineAurora() {
             float combined = (wave1 + wave2 + wave3) / 3.0;
 
             float fadeY = smoothstep(0.0, 0.3, vUv.y) * smoothstep(1.0, 0.7, vUv.y);
-            float alpha = combined * fadeY * uIntensity * 0.3;
+            float alpha = combined * fadeY * uIntensity * 0.35;
 
-            vec3 col = mix(uColor, uColor * 1.5, combined);
+            vec3 col = mix(uColor * 0.8, uColor * 1.8, combined);
             gl_FragColor = vec4(col, alpha);
           }
         `,
@@ -74,7 +78,7 @@ export default function DopamineAurora() {
 
   return (
     <mesh ref={meshRef} position={[0, 120, 0]} rotation={[Math.PI / 2, 0, 0]} material={shaderMaterial}>
-      <planeGeometry args={[500, 100, 64, 16]} />
+      <planeGeometry args={[500, 100, 48, 12]} />
     </mesh>
   );
 }
